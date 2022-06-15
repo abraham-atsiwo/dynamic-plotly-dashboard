@@ -1,16 +1,19 @@
 
 .navbar-main{
     display: flex; 
-    /* position: fixed; */
+    /* margin-top:-10px; */
+    position: fixed;
     justify-content: space-around;
     width: 100%;
-    min-height: 50px;
+    min-height: 70px;
     background: rgba(23, 20, 20, 0.968);
     align-items: center;
     font-weight: bold;
     font-size: 1.6em;
     font-style: italic;
     box-shadow: 10px 5px 5px black;
+    z-index: 10;
+    margin-bottom: 100px;
 }
 
 @media screen and (max-width: 768px){

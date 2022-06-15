@@ -1,6 +1,6 @@
 .button-main {
     display: flex;
-    /* position: fixed; */
+    position: sticky;
     /* margin-top: 20px; */
     justify-content: center;
     margin-top:10px;

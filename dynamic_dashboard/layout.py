@@ -64,19 +64,21 @@ def create_layout(app):
 
 
 def init_layout(app):
-    navbar = [Div("Dynamic Interactive Dashboard"), "Plotly | Dash"]
-    button = [Button("Add Plot", id='add-plot',n_clicks=0, className='add-plot')]
+    navbar = [Div("Dynamic Interactive Dashboard"), 
+                Button("Add Plot", id='add-plot',n_clicks=0, className='add-plot'), Div("Plotly | Dash")]
+    # button = [Button("Add Plot", id='add-plot',n_clicks=0, className='add-plot')]
 
     app.layout = Div(
         children=[  
                     #header and button
                     Div(
                         children=[Div(children=navbar, className='container-item navbar-main'), 
-                                Div(children=button, className='container-item button-main', id='button-main')
+                                # Div(children=button, className='container-item button-main', id='button-main')
                         ]
                     ),
                     #body elements
                     Div(children=[], id='container-body', className='container-body'),
                     Div(id='hidden')
-        ]
+        ],
+        className=''
     )
