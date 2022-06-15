@@ -7,12 +7,12 @@
 }
 
 .add-plot{
-    height:40px;
+    height:35px;
     width:120px;
     box-shadow: 10px 5px 5px black;
     font-weight: bold; 
     border-radius: 25%;
-    font-size:1.1rem;
+    font-size:0.9rem;
     font-style: italic;
 }
 

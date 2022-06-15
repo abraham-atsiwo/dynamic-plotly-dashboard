@@ -1,5 +1,6 @@
 
 from dash import Input, Output, State, MATCH
+from dash.dcc import Graph
 from .utils import parameters_with_column_options, data_sources, plot_categories, initial_param, components_and_label
 from .helper import delete_parameters_not_required, show_hide_component
 
@@ -62,4 +63,13 @@ def init_callback(app):
        show_hide.extend(show_hide)
        return show_hide
        
-    
+    #resetting plots to default
+    import plotly.graph_objs as go
+    @app.callback(
+        Output('reset-plot', 'children'),
+        Input('add-plot', 'n_clicks')
+    )
+    def reset_plot(n_clicks):
+        # Graph(id={'type': 'plotarea', 'index': 0})
+        # go.Figure()
+        return 'None'

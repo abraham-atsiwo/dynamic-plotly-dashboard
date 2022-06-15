@@ -1,5 +1,5 @@
 from plotly.data import carshare, iris, gapminder
-from plotly.express import scatter, line, scatter_3d, violin, line_3d
+from plotly.express import scatter, line, scatter_3d #scatter_ternary, violin, line_3d, box, ecdf, histogram, strip, pie, funnel
 from inspect import signature
 from copy import copy
 
@@ -12,15 +12,22 @@ data_sources = {
 
 plot_categories = {
                 'scatter': scatter, 
-                'line': line,
                 'scatter_3d': scatter_3d,
-                'line_3d': line_3d,
-                'violin': violin
+                # 'line_3d': line_3d,
+                # 'violin': violin,
+                # 'box': box,
+                # 'histogram': histogram,
+                # 'ecdf': ecdf,
+                # 'strip': strip,
+                # 'funnel': funnel,
+                # 'pie': pie
 }
 
 
 initial_param = []
-parameters_with_column_options = ['x', 'y', 'z', 'color', 'size', 'symbol', 'hover_name']
+parameters_with_column_options = ['x', 'y', 'z', 'color', 'size', 'symbol', 'hover_name', 'text', 'facet_row', 'facet_col', \
+                                  'error_x', 'error_x_minus', 'error_y', 'error_y_minus', 'animation_frame', 'animation_group'
+]
 initial_param.extend(parameters_with_column_options)
 
 

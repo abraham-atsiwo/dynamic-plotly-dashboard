@@ -1,9 +1,39 @@
-from dash.html import Div, Button
-from dash.dcc import Graph
+from dash.html import Div, Button, Label, P
+from dash.dcc import Graph, Dropdown
 from dash import Input, Output, State
+import dash_bootstrap_components as dbc
 
 from .utils import data_sources, plot_categories
 from .components import dropdown, parameters_widget
+
+
+import dash_bootstrap_components as dbc
+from dash import html
+
+accordion = html.Div(
+    dbc.Accordion(
+        [
+            dbc.AccordionItem(
+                [
+                    html.P("This is the content of the first section"),
+                    dbc.Button("Click here"),
+                ],
+                title="Item 1",
+            ),
+            dbc.AccordionItem(
+                [
+                    html.P("This is the content of the second section"),
+                    dbc.Button("Don't click me!", color="danger"),
+                ],
+                title="Item 2",
+            ),
+            dbc.AccordionItem(
+                "This is the content of the third section",
+                title="Item 3",
+            ),
+        ],
+    )
+)
 
 
 def create_layout(app):
@@ -65,20 +95,35 @@ def create_layout(app):
 
 def init_layout(app):
     navbar = [Div("Dynamic Interactive Dashboard"), 
-                Button("Add Plot", id='add-plot',n_clicks=0, className='add-plot'), Div("Plotly | Dash")]
-    # button = [Button("Add Plot", id='add-plot',n_clicks=0, className='add-plot')]
+                Div([
+                        Label("Display Mode", style={'margin-right':'10px'}), 
+                        Dropdown(options=['row', 'column'], value='row', style={'color':'black'})
+                    ],
+                    style={'display': 'flex', 'font-size': '1.1rem', 'align-items': 'center'}
+                ),
+                Div(
+                    [
+                        Button("Add Plot", id='add-plot',n_clicks=0, className='add-plot'), 
+                        Button("Reset All ", id='reset-all',n_clicks=0, className='add-plot'),
+                        Button("Reset Specific ", id='reset-specific',n_clicks=0, className='add-plot')
+                    ],
+                    style={'display': 'flex', 'justify-content': 'center'}
+                ), 
+                Div("Plotly | Dash"),
+            ]
 
     app.layout = Div(
         children=[  
                     #header and button
                     Div(
                         children=[Div(children=navbar, className='container-item navbar-main'), 
-                                # Div(children=button, className='container-item button-main', id='button-main')
                         ]
                     ),
                     #body elements
                     Div(children=[], id='container-body', className='container-body'),
-                    Div(id='hidden')
+                    Div(id='hidden', style={'display':'none'}),
+                    Div(id='reset-plot', style={'display':'none'}),
+                   
         ],
         className=''
     )

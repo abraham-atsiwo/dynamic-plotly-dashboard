@@ -29,7 +29,8 @@ def delete_parameters_not_required(plt_type:str=None, all_pars_values:dict={}):
 
 def show_hide_component(plt_type:str, all_pars:list):
     type_pars = get_parameters_based_type(plt_type, all_pars)
-    return [{'display':'flex', 'clearable':True} if par in type_pars else {'display':'none'} for par in all_pars]
+    return [{'display':'block', 'clearable':True} if par in type_pars else {'display':'none'} for par in all_pars]
+    # return [{'display':'flex', 'clearable':True} if par in type_pars else {'display':'none'} for par in all_pars]
         
 
 
