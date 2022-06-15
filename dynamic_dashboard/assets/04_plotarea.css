@@ -1,0 +1,23 @@
+.plotarea-main{
+    display: flex; 
+    width: 65%;
+    border-radius: 0px 50px 0 0;
+}
+
+.plotarea-item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+@media screen and (max-width: 768px){
+
+    .plotarea-main{
+        display: flex; 
+        flex-direction: column;
+        width: 100%;
+
+    }
+    
+} 
