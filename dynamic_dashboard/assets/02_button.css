@@ -1,25 +1,24 @@
 .button-main {
     display: flex;
     position: sticky;
-    /* margin-top: 20px; */
+    margin-top: 20px;
     justify-content: center;
     margin-top:10px;
-}
+} 
 
 .add-plot{
-    height:40px;
-    width:120px;
-    box-shadow: 10px 5px 5px black;
+    height:30px;
+    width:100px;
+    /* box-shadow: 10px 5px 5px black; */
     font-weight: bold; 
-    border-radius: 25%;
-    font-size:1.1rem;
-    font-style: italic;
+    border-radius: 15%;
+    font-size:0.9rem;
 }
 
 @media screen and (max-width: 768px){
     .add-plot{
         font-size: 1.0rem;
         font-style: normal;
-        height:30px;
+        height:20px;
     }
 }

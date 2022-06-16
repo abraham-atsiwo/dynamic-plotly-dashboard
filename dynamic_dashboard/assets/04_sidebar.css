@@ -1,7 +1,7 @@
 .sidebar-main{
     display: flex; 
     width: 30%;
-    /* background: black; */
+    background: black;
     border-radius: 50px 0px 0 0;
 }
 
@@ -9,7 +9,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* margin-top:10px; */
+    margin-top:10px;
 }
 
 .sidebar-parameter{
@@ -26,21 +26,20 @@
     margin-top: 2px;
     width: 100%;
     margin-left:3px;
-    /* background: green; */
 }
 
  .sidebar-label {
     width: 40%;
     padding-left:2px;
-    /* display:flex;
-    width:100%; */
+    display:block;
+    width:100%;
 }
 
 .sidebar-component{
     width: 57%;
     color: black;
-    /* display: flex;
-    width:100%; */
+    display: block;
+    width:100%;
 } 
 
 @media screen and (max-width: 768px){
@@ -49,11 +48,12 @@
         display: flex; 
         flex-direction: column;
         width: 100%;
+        border-radius:20px
     }
 
     .sidebar-component-label{
         display: flex; 
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 

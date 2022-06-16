@@ -1,32 +1,73 @@
-.body-main{
-    display: flex; 
-    margin-top:20px;
-    justify-content: space-around;
-    font-weight: bold;
-    font-size: 1.2rem;
-    width: 49%;
+
+.container-body-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
 }
 
+.container-body{
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
+}
 
-.mainbody-item{
-    display: flex;
-    min-height: 100px;
-    /* border-style: dashed; */
-    background: rgba(0, 0, 0, 0.508);
-    /* border-radius: 50px; */
-    box-shadow: 10px 5px 5px black;
-
+.container-body-item{
+    display:flex;
+    width: 50%;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
 .header {
     display: flex;
-    /* background-color: red; */
     justify-content: space-around;
+    font-weight: bold;
     margin:10px;
 }
 
 
+
+.mainbody-item{
+    display: flex;
+    /* min-height: 100px; */
+    border-style: solid;
+    background: rgba(0, 0, 0, 0.508);
+    box-shadow: 10px 5px 5px black;
+
+}
+
+
 @media screen and (max-width: 768px){
+
+    .container-body{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .container-body-item{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .container-body-wrapper{
+        margin-top: 70px;
+    }
+
+    /* .mainbody-item{
+        display: flex;
+        border-style: solid;
+        background: rgba(0, 0, 0, 0.508);
+        box-shadow: 10px 5px 5px black;
+    
+    } */
+}
+
+
+
+/* @media screen and (max-width: 768px){
     .body-main{
         display: flex;
         flex-direction: column;
@@ -38,9 +79,10 @@
         width: 100%;
         margin-top: 10px;
     }
-}
+} */
 
-.container-body{
+/* default view */
+/* .container-body{
     width: 100%;
     background-color:rgba(30, 122, 30, 0.527);
     border-style: solid; 
@@ -50,12 +92,38 @@
     margin-top: 150px;
     position: absolute;
 
-}
+} */
 
-.container-body-item{
+
+
+/* .container-body-item{
     display: flex
-}
+} */
 
-.container-body-wrapper{
+/* .container-body-wrapper{
     margin-top:100px;
-}
+} */
+
+
+
+
+
+/* changed when set to column view */
+/* .container-body{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 150px;
+    position: absolute;
+    flex-direction: column;
+
+} */
+
+/* .body-main{
+    display: flex; 
+    margin-top:20px;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 99%;
+} */

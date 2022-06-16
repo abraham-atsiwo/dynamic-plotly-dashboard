@@ -1,7 +1,10 @@
 
 from dash import Input, Output, State, MATCH
+from dash.dcc import Graph
 from .utils import parameters_with_column_options, data_sources, plot_categories, initial_param, components_and_label
 from .helper import delete_parameters_not_required, show_hide_component
+
+from .dynamic_css import dynamic_css_callback
 
 
 def init_callback(app):
@@ -51,8 +54,6 @@ def init_callback(app):
         fig = figure(data_frame=df, **plot_pars)
         return [fig]
 
-
-
     @app.callback(
         [Output({'type':id_key, 'index':MATCH}, 'style') for id_key in components_and_label], 
         [Input({'type':'plot-type', 'index':MATCH}, 'value')]
@@ -61,5 +62,28 @@ def init_callback(app):
        show_hide = show_hide_component(type, initial_param)
        show_hide.extend(show_hide)
        return show_hide
-       
+
     
+    # @app.callback([Output('container-body', 'style')], #, Output('body-main', 'style')], 
+    #     [Input('display-mode', 'value')], 
+    #     prevent_initial_call=True
+    # )
+    # def dynamic_css(display_mode):
+    #     if display_mode == 'column':
+    #         style = dynamic_css_callback['container-body-col']
+    #         # body_main_style = dynamic_css_callback['body-main-col']
+    #     else:
+    #         style = dynamic_css_callback['container-body-row']
+    #         # body_main_style = dynamic_css_callback['body-main-row']
+    #     return style
+       
+    # #resetting plots to default
+    # import plotly.graph_objs as go
+    # @app.callback(
+    #     Output('reset-plot', 'children'),
+    #     Input('add-plot', 'n_clicks')
+    # )
+    # def reset_plot(n_clicks):
+    #     # Graph(id={'type': 'plotarea', 'index': 0})
+    #     # go.Figure()
+    #     return 'None'
