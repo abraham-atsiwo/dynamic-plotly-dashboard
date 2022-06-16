@@ -3,6 +3,7 @@
     display: flex; 
     /* margin-top:-10px; */
     position: fixed;
+    top: 0;
     justify-content: space-around;
     width: 100%;
     min-height: 70px;
