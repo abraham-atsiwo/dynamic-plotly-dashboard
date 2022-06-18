@@ -1,3 +1,6 @@
+.container{
+    margin-bottom: 100px;
+}
 
 .container-body-wrapper{
     display: flex;
@@ -9,14 +12,17 @@
     display: flex; 
     flex-flow: row wrap;
     justify-content: space-around;
-    width: 100%;
+    width: 95%;
+
 }
 
 .container-body-item{
     display:flex;
-    width: 50%;
+    /* max-width: 640px; */
     justify-content: space-around;
     margin-top: 20px;
+    overflow:hidden;
+    width: 49%;
 }
 
 .header {
@@ -56,74 +62,6 @@
         margin-top: 70px;
     }
 
-    /* .mainbody-item{
-        display: flex;
-        border-style: solid;
-        background: rgba(0, 0, 0, 0.508);
-        box-shadow: 10px 5px 5px black;
-    
-    } */
 }
 
 
-
-/* @media screen and (max-width: 768px){
-    .body-main{
-        display: flex;
-        flex-direction: column;
-
-    }
-
-    .mainbody-item{
-        display: flex;
-        width: 100%;
-        margin-top: 10px;
-    }
-} */
-
-/* default view */
-/* .container-body{
-    width: 100%;
-    background-color:rgba(30, 122, 30, 0.527);
-    border-style: solid; 
-    display: flex;
-    justify-content: space-around;
-    flex-flow: row wrap;
-    margin-top: 150px;
-    position: absolute;
-
-} */
-
-
-
-/* .container-body-item{
-    display: flex
-} */
-
-/* .container-body-wrapper{
-    margin-top:100px;
-} */
-
-
-
-
-
-/* changed when set to column view */
-/* .container-body{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 150px;
-    position: absolute;
-    flex-direction: column;
-
-} */
-
-/* .body-main{
-    display: flex; 
-    margin-top:20px;
-    justify-content: space-around;
-    font-weight: bold;
-    font-size: 1.2rem;
-    width: 99%;
-} */

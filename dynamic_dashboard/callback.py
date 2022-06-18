@@ -1,4 +1,5 @@
 
+from xml.dom.pulldom import parseString
 from dash import Input, Output, State, MATCH
 from dash.dcc import Graph
 from .utils import parameters_with_column_options, data_sources, plot_categories, initial_param, components_and_label
@@ -55,35 +56,20 @@ def init_callback(app):
         return [fig]
 
     @app.callback(
-        [Output({'type':id_key, 'index':MATCH}, 'style') for id_key in components_and_label], 
+        [Output({'type':id_key+'_div', 'index':MATCH}, 'style') for id_key in initial_param], 
         [Input({'type':'plot-type', 'index':MATCH}, 'value')]
     )
     def hide_components_line(type):
        show_hide = show_hide_component(type, initial_param)
-       show_hide.extend(show_hide)
+    #    show_hide.extend(show_hide)
        return show_hide
 
     
-    # @app.callback([Output('container-body', 'style')], #, Output('body-main', 'style')], 
-    #     [Input('display-mode', 'value')], 
-    #     prevent_initial_call=True
-    # )
-    # def dynamic_css(display_mode):
-    #     if display_mode == 'column':
-    #         style = dynamic_css_callback['container-body-col']
-    #         # body_main_style = dynamic_css_callback['body-main-col']
-    #     else:
-    #         style = dynamic_css_callback['container-body-row']
-    #         # body_main_style = dynamic_css_callback['body-main-row']
-    #     return style
-       
-    # #resetting plots to default
-    # import plotly.graph_objs as go
-    # @app.callback(
-    #     Output('reset-plot', 'children'),
-    #     Input('add-plot', 'n_clicks')
-    # )
-    # def reset_plot(n_clicks):
-    #     # Graph(id={'type': 'plotarea', 'index': 0})
-    #     # go.Figure()
-    #     return 'None'
+    @app.callback([Output({'type':'plotarea-main', 'index':MATCH}, 'style'), Output({'type':'container-body-item', 'index':MATCH}, 'style')],
+                    [Input({'type':'width', 'index':MATCH}, 'value'), Input({'type':'height', 'index':MATCH}, 'value')]
+    )
+    def update_plotarea_height_width(width, height):
+        styles = {'min-width':width, 'min-height':height}
+        body_width = (width)/10
+        body_style = {'width':str(body_width)+'%'}
+        return [styles, body_style]
