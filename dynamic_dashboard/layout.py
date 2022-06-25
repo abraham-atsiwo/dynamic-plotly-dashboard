@@ -1,4 +1,4 @@
-from re import M
+from dynamic_dashboard import app 
 from dash.html import Div, Button, Label, P
 from dash.dcc import Graph, Dropdown
 from dash import Input, Output, State
@@ -9,7 +9,7 @@ from .components import slider
 from .utils import data_sources, plot_categories
 from .components import dropdown, parameters_widget
 
-
+server = app.server
 def create_layout(app):
     @app.callback([Output('container-body', 'children')],
                 [Input('add-plot', 'n_clicks')], 

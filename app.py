@@ -3,8 +3,6 @@ from dynamic_dashboard.layout import create_layout, init_layout
 from dynamic_dashboard.callback import init_callback
 import statsmodels.api as sm
 
-server = app.server
-
 app.suppress_callback_exceptions = True
 def main(app=app):
     init_layout(app)
