@@ -1,5 +1,4 @@
-from plotly.data import carshare, iris, gapminder
-from seaborn import load_dataset
+from plotly.data import carshare, iris, gapminder, tips
 from plotly.express import scatter, line, scatter_3d, violin, line_3d, box, ecdf, histogram, strip, bar_polar, treemap, \
             pie, funnel, bar, density_heatmap, density_contour, line_polar, scatter_polar, area, line_ternary, scatter_mapbox
 # from inspect import signature
@@ -9,7 +8,7 @@ data_sources = {
                 'iris': iris(),
                 'carshare': carshare(),
                 'gapminder': gapminder(),
-                'penguins': load_dataset('penguins')
+                'penguins': tips
 }
 
 

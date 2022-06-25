@@ -1,7 +1,5 @@
 
-from xml.dom.pulldom import parseString
 from dash import Input, Output, State, MATCH
-from dash.dcc import Graph
 from .utils import parameters_with_column_options, data_sources, plot_categories, initial_param, components_and_label
 from .helper import delete_parameters_not_required, show_hide_component
 

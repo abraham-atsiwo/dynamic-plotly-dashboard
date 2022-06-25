@@ -2,7 +2,6 @@ from re import M
 from dash.html import Div, Button, Label, P
 from dash.dcc import Graph, Dropdown
 from dash import Input, Output, State
-import dash_bootstrap_components as dbc
 from math import floor, ceil
 from .components import slider
 
