@@ -19,19 +19,19 @@ plot_categories = {
                 'violin': violin,
                 'box': box,
                 'bar':bar,
-                # 'histogram': histogram,
-                # 'ecdf': ecdf,
-                # 'strip': strip,
-                # 'density_contour': density_contour,
-                # 'funnel': funnel,
-                # 'pie': pie,       
-                # 'area': area,           
-                # 'scatter_3d': scatter_3d,
-                # 'line_3d': line_3d,
-                # 'line_polar':line_polar,
-                # 'scatter_polar': scatter_polar,
-                # 'line_ternary': line_ternary,
-                # 'bar_polar': bar_polar,
+                'histogram': histogram,
+                'ecdf': ecdf,
+                'strip': strip,
+                'density_contour': density_contour,
+                'funnel': funnel,
+                'pie': pie,       
+                'area': area,           
+                'scatter_3d': scatter_3d,
+                'line_3d': line_3d,
+                'line_polar':line_polar,
+                'scatter_polar': scatter_polar,
+                'line_ternary': line_ternary,
+                'bar_polar': bar_polar,
 
 }
 
@@ -51,7 +51,7 @@ parameters_with_defined_options = ['marginal_x', 'marginal_y', 'trendline', 'tre
 initial_param.extend(parameters_with_defined_options)
 
 # #integers and float 
-parameters_with_numeric_options = ['opacity', 'size_max', 'height', 'width', 'hole', 'nbins']
+parameters_with_numeric_options = ['opacity', 'size_max', 'height', 'hole', 'nbins']
 initial_param.extend(parameters_with_numeric_options)
 
 # #boolean options

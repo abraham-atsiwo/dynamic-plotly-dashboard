@@ -5,7 +5,8 @@
 .container-body-wrapper{
     display: flex;
     justify-content: center;
-    margin-top: 150px;
+    margin: 150px auto 0 auto;
+    max-width: 1900px;
 }
 
 .container-body{

@@ -32,7 +32,7 @@ def parameters_widget(n_clicks):
     opacity = slider('opacity', 0.0, 1.0, 0.2, 1.0, index=n_clicks)
     hole = slider('hole', 0.0, 1.0, 0.2, 0.0, index=n_clicks)
     height = slider('height', 400, 900, 100, 400, index=n_clicks)
-    width = slider('width', 500, 1000, 100, 500, index=n_clicks)
+    # width = slider('width', 800, 1000, 50, 800, index=n_clicks)
     size_max = slider('size_max', 0, 100, 20, 20, index=n_clicks)
     start_angle = slider('start_angle', 0, 360, 90, 90, index=n_clicks)
     nbins = slider('nbins', 4, 12, 2, 4, index=n_clicks)
@@ -70,6 +70,6 @@ def parameters_widget(n_clicks):
     other_parameters = [marginal_x, marginal_y, marginal, log_x, log_y, log_r, log_z, barnorm, histnorm, 
                         histfunc, hole, line_shape, groupnorm, direction, start_angle, line_close,
                         violinmode, boxmode, barmode, stripmode, notched, points, box, nbins, cummulative, markers, lines, ecdfnorm, ecdfmode,
-                        template, width, height, trendline, trendline_scope, render_mode, opacity, size_max]
+                        template, height, trendline, trendline_scope, render_mode, opacity, size_max]
     init_pars.extend(other_parameters)
     return init_pars

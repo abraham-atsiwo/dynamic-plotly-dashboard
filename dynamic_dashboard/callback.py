@@ -65,11 +65,17 @@ def init_callback(app):
        return show_hide
 
     
-    @app.callback([Output({'type':'plotarea-main', 'index':MATCH}, 'style'), Output({'type':'container-body-item', 'index':MATCH}, 'style')],
-                    [Input({'type':'width', 'index':MATCH}, 'value'), Input({'type':'height', 'index':MATCH}, 'value')]
+    @app.callback([
+                    Output({'type':'plotarea-main', 'index':MATCH}, 'style'), 
+                    # Output({'type':'container-body-item', 'index':MATCH}, 'style')
+                ],
+                    [
+                        # Input({'type':'width', 'index':MATCH}, 'value'), 
+                        Input({'type':'height', 'index':MATCH}, 'value')
+                    ]
     )
-    def update_plotarea_height_width(width, height):
-        styles = {'min-width':width, 'min-height':height}
-        body_width = (width)/10
-        body_style = {'width':str(body_width)+'%'}
-        return [styles, body_style]
+    def update_plotarea_height_width(height):
+        styles = {'min-height':height}
+        # body_width = (width)/10
+        # body_style = {'width':str(body_width)+'%'}
+        return [styles]

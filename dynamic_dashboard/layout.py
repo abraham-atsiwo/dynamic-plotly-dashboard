@@ -21,8 +21,8 @@ def create_layout(app):
                             value='scatter', index=n_clicks, kwargs={'clearable': False})
         data_type = dropdown(label='data_frame', options={val:val for val in data_sources.keys()}, 
                             value='iris', index=n_clicks, kwargs={'clearable': False})
-        reset_specific = Div(Button("Reset", id='reset', n_clicks=n_clicks, className='add-plot'))
-        type_data = [reset_specific, plt_type, data_type]
+        # reset_specific = Div(Button("Reset", id='reset', n_clicks=n_clicks, className='add-plot'))
+        type_data = [plt_type, data_type]
         type_data.extend(parameters_widget(n_clicks))
         n = len(type_data)
         n_sidebar = ceil((n+18)//2)
@@ -68,10 +68,10 @@ def create_layout(app):
                                                 ], 
                                                 className='header'), 
                                             Div(Graph(id={'type':'plotarea', 'index':n_clicks}), 
-                                                style={'display':'flex', 'justify-content':'center'}),
+                                                style={'display':'flex', 'justifyContent':'center'}),
                                             Div(under_plot, 
-                                            style={'display':'flex', 'align-items':'center', 
-                                                    'margin-top':'20px', 'flex-flow':'column wrap', 'width':'70%'
+                                            style={'display':'flex', 'alignItems':'center', 
+                                                    'marginTop':'20px', 'flexFlow':'column wrap', 'width':'70%'
                                             })                       
                                 ],
                                 className="plotarea-item"
@@ -100,9 +100,9 @@ def init_layout(app):
                     [
                         # display_mode,
                         Button("Add Plot", id='add-plot',n_clicks=0, className='add-plot'), 
-                        Button("Reset All ", id='reset-all',n_clicks=0, className='add-plot'),
+                        # Button("Reset All ", id='reset-all',n_clicks=0, className='add-plot'),
                     ],
-                    style={'display': 'flex', 'justify-content': 'center'}
+                    style={'display': 'flex', 'justifyContent': 'center'}
                 ), 
                 Div("Plotly | Dash"),
             ]
