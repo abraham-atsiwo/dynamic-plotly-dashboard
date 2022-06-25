@@ -9,7 +9,7 @@ from .components import slider
 from .utils import data_sources, plot_categories
 from .components import dropdown, parameters_widget
 
-server = app.server
+
 def create_layout(app):
     @app.callback([Output('container-body', 'children')],
                 [Input('add-plot', 'n_clicks')], 
