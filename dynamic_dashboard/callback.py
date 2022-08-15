@@ -31,9 +31,10 @@ def init_callback(app):
     @app.callback([Output({'type':opt, 'index':MATCH}, 'value') for opt in ['x', 'y', 'z']],
         [Input({'type':'data_frame', 'index':MATCH}, 'value')]
     )
-    def update_selected_options(data_type):
+    def update_selected_options(data_type, plt_type):
         col_options = data_sources[data_type].columns
-        return col_options[0], col_options[1], col_options[2] if len(col_options) >=3 else col_options[1]
+        x, y, z = col_options[0], col_options[1], col_options[2] if len(col_options) >=3 else col_options[1]
+        return x, y, z
 
 
     @app.callback(
