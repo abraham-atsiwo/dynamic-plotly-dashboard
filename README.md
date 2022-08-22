@@ -4,9 +4,11 @@ A data visualization dashboard that enables users to build dynamic 2D and 3D plo
 
 ### Installation 
 - `Clone the repository or download the code.`
-- 
+- `Create and activate a virtual environment.`
+- `Install packages from `requirements.txt`
 
 ### Usage
+- Run the application on the command line`: `python app.py` 
 
 ### Demo
 
