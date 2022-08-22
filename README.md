@@ -3,7 +3,8 @@ A data visualization dashboard that enables users to build dynamic 2D and 3D plo
 
 
 ### Installation 
-- Clone the repository or download the code.
+- `Clone the repository or download the code.`
+- 
 
 ### Usage
 
